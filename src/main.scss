@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+$base-font-size: 16px;
+$base-font-family: 'Poppins', sans-serif;
+$base-font-weight: 400;
+
+html {
+  font-size: $base-font-size;
+	font-family: $base-font-family;
+  font-weight: $base-font-weight;
+}
+
+body {
+  padding: 0;
+  margin: 125px;
+} 
+.app{
+  width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.user-input{
+  width: 275px;
+  height: 28px;
+  border-radius: 13px 13px 2px 2px;
+}
+.button{
+  width: 275px;
+  height: 28px;
+  border-radius: 2px 2px 13px 13px;
+
+	&--small {
+		width: 170px;
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "raffler",
+  "version": "0.0.1",
+  "description": "Raffle app",
+  "main": "script.js",
+  "scripts": {
+    "watch": "parcel watch src/*.html --public-url ./ --no-source-maps",
+    "dev": "parcel src/*.html --open --no-cache --no-source-maps",
+    "build": "parcel build src/*.html --public-url ./ --no-source-maps",
+    "sass-build": "sass src/main.scss src/main.min.css --style compressed --no-error-css",
+    "sass-watch": "sass --watch src/main.scss src/main.min.css --style expanded --error-css"
+  },
+  "author": "drementer, wall-e",
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.54.9"
+  }
+}

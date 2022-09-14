@@ -1,0 +1,36 @@
+input {
+  padding: 0;
+  width: 100%;
+  outline: 0;
+  border-radius: 5rem;
+  border: 3px solid $black;
+  font-size: inherit;
+  display: block;
+  z-index: 1;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    border-color: $black;
+  }
+
+  &::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.54;
+  }
+}
+
+.form-element {
+  padding: 0.27rem;
+  border: 3px solid $black;
+  border-radius: 5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+
+  &__input {
+    flex-grow: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+}

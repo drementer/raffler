@@ -64,3 +64,18 @@ input {
 		width: 100%;
 	}
 }
+
+.form-element {
+	padding: 0.27rem;
+	border: 3px solid $black;
+	border-radius: 5rem;
+	display: flex;
+	flex-direction: row;
+	gap: .5rem;
+
+	&__input {
+		flex-grow: 1;
+		max-width: 100%;
+		width: 100%;
+	}
+}

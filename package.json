@@ -17,5 +17,14 @@
   "dependencies": {
     "parcel-bundler": "^1.12.5",
     "sass": "^1.54.9"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drementer/raffler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/drementer/raffler/issues"
+  },
+  "homepage": "https://github.com/drementer/raffler#readme"
 }

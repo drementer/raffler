@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700');
+
+/// @type string | list
+$root-font-family: 'Poppins', sans-serif !default;
+
+/// @type stirng
+$root-font-size: 18px !default;
+
+/// @type stirng
+/// @alias root-font-size
+$root-font-size--mobile: 14px !default;
+
+/// 1.250 Major Third
+///
+/// @type map
+/// @access private
+///
+/// @link https://type-scale.com/
+$font-scales: (
+  'h1': 3.815,
+  'h2': 3.052,
+  'h3': 2.441,
+  'h4': 1.953,
+  'h5': 1.563,
+  'h6': 1.25,
+  'p': 1,
+  'label': 0.875,
+) !default;
+
+html {
+  font-family: $root-font-family;
+  font-size: $root-font-size;
+
+  @include mq(lg) {
+    font-size: $root-font-size--mobile;
+  }
+}
+
+@each $element, $font-value in $font-scales {
+  #{$element} {
+    @include font-size($font-value * 1rem);
+  }
+}

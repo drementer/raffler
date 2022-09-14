@@ -4,11 +4,11 @@
   "description": "Raffle app",
   "main": "script.js",
   "scripts": {
-    "watch": "parcel watch src/*.html --public-url ./ --no-source-maps",
-    "dev": "parcel src/*.html --open --no-cache --no-source-maps",
-    "build": "parcel build src/*.html --public-url ./ --no-source-maps",
-    "sass-build": "sass src/main.scss src/main.min.css --style compressed --no-error-css",
-    "sass-watch": "sass --watch src/main.scss src/main.min.css --style expanded --error-css"
+    "parcel-watch": "parcel watch src/*.html --public-url ./ --no-source-maps",
+    "parcel-dev": "parcel src/*.html --open --no-cache --no-source-maps",
+    "parcel-build": "parcel build src/*.html --public-url ./ --no-source-maps",
+    "sass-build": "sass src/assets/scss/main.scss src/assets/css/main.min.css --style compressed --no-error-css",
+    "sass-watch": "sass --watch src/assets/scss/main.scss src/assets/css/main.min.css --style expanded --error-css"
   },
   "author": "drementer, wall-e",
   "license": "MIT",

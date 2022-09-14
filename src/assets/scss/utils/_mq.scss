@@ -2,6 +2,30 @@
 /// @group mq
 ////
 
+/// Converts px to em
+///
+/// @param {number} $px - Px value to translate
+/// @require {variable} $root-font-size - Root font size
+/// @return {number} - Em value
+///
+/// @example
+///   @debug px2em(16);
+///    //-> 1em
+///
+/// @example
+///   @debug px2em(16px);
+///    //-> 1em
+///
+@function px2em($px, $root-font-size: 16px) {
+  @if unitless($px) {
+    $px: $px * 1px;
+  }
+  @if comparable($px, 1em) {
+    @return $px;
+  }
+  @return calc($px / $root-font-size) * 1em;
+}
+
 /// @type map
 /// @require {function} px2em
 ///

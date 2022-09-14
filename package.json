@@ -2,7 +2,6 @@
   "name": "raffler",
   "version": "0.0.1",
   "description": "Raffle app",
-  "main": "script.js",
   "scripts": {
     "parcel-watch": "parcel watch src/*.html --public-url ./ --no-source-maps",
     "parcel-dev": "parcel src/*.html --open --no-cache --no-source-maps",

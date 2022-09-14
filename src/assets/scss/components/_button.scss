@@ -1,0 +1,23 @@
+.button {
+	@extend %button;
+	@include padding(0.5rem 1.5rem);
+	@include font-size(1.2rem);
+
+	display: inline-flex;
+	justify-content: center;
+	position: relative;
+	vertical-align: middle;
+	color: $white;
+	background-color: $black;
+
+	transition: all ease-out 150ms;
+
+	&:hover {
+		background-color: $green;
+		color: $black;
+	}
+
+	&.-full-w {
+		width: 100%
+	}
+}

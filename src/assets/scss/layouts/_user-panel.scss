@@ -1,0 +1,10 @@
+.user-panel {
+  border-radius: 15px;
+  overflow: hidden;
+
+  &__head {
+    @include padding(0.6rem 1.25rem);
+    color: $white;
+    background-color: $black;
+  }
+}

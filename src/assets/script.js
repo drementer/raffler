@@ -84,9 +84,9 @@ const getUsers = () => {
 
   users.forEach((user, index) => {
     let inner = `
-		<div class="users__item">
-			<div class="users__item-title">${user}</div>
-			<button type="button" class="users__setting" onClick="deleteUser(${index})">Sil</button>
+		<div class="user-card">
+			<div class="user-card__heading">${user}</div>
+			<div class="user-card__button button" onClick="deleteUser(${index})">delete</div>
 		</div>
 		`;
     injectHtml(userList, inner);

@@ -1,0 +1,6 @@
+.app {
+  @include flex-column;
+  gap: 2rem;
+
+  @include padding(2rem 1rem);
+}

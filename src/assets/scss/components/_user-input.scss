@@ -27,6 +27,15 @@ input {
   flex-direction: row;
   gap: 0.5rem;
 
+  &[disable] {
+    border: 3px solid $gray-2;
+  }
+
+  &[disable] &__button {
+		pointer-events: none;
+    background-color: $gray;
+  }
+
   &__input {
     @include padding-left(1.25rem);
 

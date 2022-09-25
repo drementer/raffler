@@ -8,19 +8,11 @@ $root-font-size: 18px !default;
 /// @alias root-font-size
 $root-font-size--mobile: 14px !default;
 
-/// 1.250 Major Third
-///
 /// @type map
 /// @access private
-///
-/// @link https://type-scale.com/
 $font-scales: (
-  'h1': 3.815,
-  'h2': 3.052,
-  'h3': 2.441,
-  'h4': 1.953,
-  'h5': 1.563,
-  'h6': 1.25,
+  'h1': 2,
+  'h2': 1.125,
   'p': 1,
   'label': 0.875,
 ) !default;

@@ -1,0 +1,16 @@
+.user-card {
+  @include flex-row;
+  align-items: center;
+  border-radius: 5rem;
+  padding: 0.27rem;
+  background: linear-gradient(
+    90deg,
+    hsla(0, 0%, 0%, 0.05) 0%,
+    hsla(0, 0%, 0%, 0.012) 76.56%
+  );
+
+  &__heading {
+    @include padding-left(1.25rem);
+    flex-grow: 1;
+  }
+}

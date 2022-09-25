@@ -1,0 +1,48 @@
+.popup {
+  @include flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 99;
+
+  &__inner {
+    @include flex;
+    justify-content: center;
+    align-items: center;
+		pointer-events: none;
+
+    width: min(100% - 2rem, 35.5rem);
+    height: 10rem;
+
+    background-image: url('../img/winner.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    background-color: $white;
+  }
+
+  &__filter {
+    position: absolute;
+    z-index: -1;
+		width: 100%;
+		height: 100%;
+
+    background-color: rgba($gray-2, 0.2);
+  }
+
+  h1 {
+    @include font-size(48px);
+    user-select: none;
+    text-transform: none;
+    font-weight: 600;
+  }
+}

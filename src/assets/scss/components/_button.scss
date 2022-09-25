@@ -1,23 +1,44 @@
 .button {
-	@extend %button;
-	@include padding(0.5rem 1.5rem);
-	@include font-size(1.2rem);
+  @extend %button;
+  @include padding(0.5rem 1.75rem);
+  @include font-size(1.2rem);
 
-	display: inline-flex;
-	justify-content: center;
-	position: relative;
-	vertical-align: middle;
-	color: $white;
-	background-color: $black;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  color: $white;
+  border: none;
+  border-radius: 5rem;
+  background-color: $black;
+  user-select: none;
 
-	transition: all ease-out 150ms;
+  transition: all ease-out 150ms;
 
-	&:hover {
-		background-color: $green;
-		color: $black;
-	}
+  &:hover:not(.-danger):not(.-icon) {
+    background-color: $green;
+    color: $black;
+  }
 
-	&.-full-w {
-		width: 100%
-	}
+  &.-icon {
+    @include padding(0.5rem);
+    @include font-size(1.5rem);
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    color: black;
+  }
+
+  &.-danger {
+    background-color: $red;
+  }
+
+  &.-full-w {
+    width: 100%;
+  }
+
+  &[disable] {
+    pointer-events: none;
+    background-color: $gray;
+  }
 }

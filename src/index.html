@@ -5,7 +5,7 @@
 	<!-- Avoiding the FOUC v3.0 -->
 	<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 
-	<!-- Genel -->
+	<!-- General -->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
@@ -13,11 +13,11 @@
 	<meta name="author" content="drementer, wall-e">
 	<meta name="creator" content="drementer, wall-e">
 
-	<!-- Stiller -->
-		<!-- Çekirdek -->
+	<!-- Styles -->
+		<!-- Base -->
 		<link rel="stylesheet" href="assets/css/main.min.css?v=0.0.1">
 
-	<!-- Sayfa bilgileri -->
+	<!-- Page Information -->
 	<title>raffler</title>
 	<meta name="title" content="raffler">
 	<meta name="description" content="raffler">
@@ -25,7 +25,7 @@
 	<meta name="theme-color" content="#000">
 	<meta name="rating" content="general">
 
-	<!-- İkonlar -->
+	<!-- Icons -->
 	<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
 	<!-- <link rel="icon" href="favicon.ico" sizes="any"> -->
 	<!-- <link rel="icon" href="icon.svg" type="image/svg+xml"> -->
@@ -34,7 +34,7 @@
 	<!-- Manifest -->
 	<!-- <link rel="manifest" href="site.webmanifest"> -->
 
-	<!-- Open Graph Genel -->
+	<!-- General Open Graph -->
 	<meta property="og:title" content="raffler">
 	<meta property="og:description" content="raffler">
 	<meta property="og:url" content="dw-raffler.netlify.app/">
@@ -43,7 +43,7 @@
 	<meta property="og:type" content="website">
 	<!-- <meta property="og:image" content=""> -->
 
-	<!-- Open Graph Twitter -->
+	<!-- Twitter Open Graph -->
 	<meta name="twitter:title" content="raffler">
 	<meta name="twitter:description" content="raffler">
 	<meta name="twitter:url" content="raffler">
@@ -59,18 +59,36 @@
 </head>
 <body>
 
-	<!-- Root -->
-	<div id="root" class="index">
-		<main class="app container">
-			<!-- Form Element -->
-			<div class="form-element">
-				<input type="text" class="form-element__input" placeholder="User Name">
-				<button type="button" class="form-element__button button">add</button>
-			</div><!-- /Form Element -->
-		</main>
-	</div><!-- /Root -->
+	<!-- App -->
+	<main class="app container">
+		<!-- User Input -->
+		<div class="user-input" disable>
+			<input type="text" class="user-input__input" maxlength="18" placeholder="User Name" required autofocus user-input>
+			<button type="button" class="user-input__button button" add-user-button>add</button>
+		</div><!-- /User Input -->
+
+		<!-- User Panel -->
+		<div class="user-panel">
+			<div class="user-panel__head">
+				<h1 class="user-panel__heading">Users</h1>
+			</div>
+			<div class="user-panel__user-list user-cards" user-list></div>
+		</div>
+		<!-- /User Panel -->
+
+		<!-- Raffle Button -->
+		<button class="raffle-button button -full-w" raffle-button>Raffle</button>
+
+		<!-- Winner Popup -->
+		<div class="winner-popup popup" hidden winner-popup>
+			<div class="popup__filter"></div>
+			<div class="popup__inner" winner></div>
+		</div><!-- /Winner Popup -->
+	</main><!-- /App -->
 
 	<!-- Scripts -->
 	<script src="assets/script.js"></script>
+		<!-- Ion Icons -->
+		<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

@@ -1,11 +1,10 @@
 input {
-  padding: 0;
-  width: 100%;
-  outline: 0;
-  border-radius: 5rem;
-  border: 3px solid $black;
-  font-size: inherit;
   display: block;
+  width: 100%;
+  padding: 0;
+  outline: 0;
+  font-size: inherit;
+  border: none;
   z-index: 1;
   background-color: transparent;
 
@@ -20,7 +19,7 @@ input {
   }
 }
 
-.form-element {
+.user-input {
   padding: 0.27rem;
   border: 3px solid $black;
   border-radius: 5rem;
@@ -28,9 +27,24 @@ input {
   flex-direction: row;
   gap: 0.5rem;
 
+  &[disable] {
+    border: 3px solid $gray-2;
+  }
+
+  &[disable] &__button {
+		pointer-events: none;
+    background-color: $gray;
+  }
+
   &__input {
+    @include padding-left(1.25rem);
+
     flex-grow: 1;
     max-width: 100%;
     width: 100%;
+  }
+
+  &__button {
+    margin-right: 1px;
   }
 }

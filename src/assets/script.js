@@ -82,7 +82,7 @@ const getUsers = () => {
 
   users.forEach((user, index) => {
     let inner = `
-		<div class="user-card">
+		<div class="user-cards__user user-card">
 			<input type="text" id="user-name-${index}" name="user-name" class="user-card__heading" maxlength="18" value="${user}" oninput="updateUser(${index},this.value)">
 			<label for="user-name-${index}" class="user-card__edit-button button -icon"><ion-icon name="create-outline"></ion-icon></label>
 			<div class="user-card__delete-button button -danger" onClick="deleteUser(${index})">delete</div>

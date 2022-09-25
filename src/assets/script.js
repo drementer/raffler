@@ -150,7 +150,7 @@ raffleButton.addEventListener('click', () => {
 });
 
 userInput.addEventListener('input', (e) => {
-  let = e = e.target;
+  e = e.target;
   let parentEl = e.parentElement;
 
   e.checkValidity()
@@ -160,7 +160,7 @@ userInput.addEventListener('input', (e) => {
 
 userInput.addEventListener('keyup', (e) => {
   if (e.key === 'Enter' || e.keyCode === 13) {
-    let = e = e.target;
+    e = e.target;
     let parentEl = e.parentElement;
 
     if (userInput.value.trim() == '') return;

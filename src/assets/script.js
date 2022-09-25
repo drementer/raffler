@@ -75,6 +75,7 @@ const disableRaffler = () => {
 		<h2 class="user-cards__error">No one can won because there is empty!!!</h2>
 	`;
   injectHtml(userList, inner);
+
   raffleButton.setAttribute('disable', '');
 };
 
@@ -124,9 +125,11 @@ addUserButton.addEventListener('click', () => {
   if (users.lenght != 0) raffleButton.removeAttribute('disable');
 
   users.push(userInput.value);
+
   userInput.parentElement.setAttribute('disable', '');
   userInput.focus();
   userInput.value = '';
+
   getUsers();
 });
 

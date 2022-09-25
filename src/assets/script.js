@@ -61,7 +61,8 @@ const injectHtml = (parent, inner) => {
  */
 const deleteUser = (index) => {
   users.splice(index, 1);
-  getUsers();
+
+  users.length == 0 ? disableRaffler() : getUsers();
 };
 
 /**

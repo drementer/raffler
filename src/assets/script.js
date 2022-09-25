@@ -70,7 +70,7 @@ const deleteUser = (index) => {
  * @param {string} value - The value of the user to be updated
  */
 const updateUser = (index, value) => {
-  if (value == null || value == '') return deleteUser(index);
+  if (value == null || value.trim() == '') return deleteUser(index);
   users[index] = value;
 };
 
@@ -83,7 +83,7 @@ const getUsers = () => {
   users.forEach((user, index) => {
     let inner = `
 		<div class="user-card">
-			<input type="text" id="user-name-${index}" name="user-name" class="user-card__heading" value="${user}" oninput="updateUser(${index},this.value)">
+			<input type="text" id="user-name-${index}" name="user-name" class="user-card__heading" maxlength="18" value="${user}" oninput="updateUser(${index},this.value)">
 			<label for="user-name-${index}" class="user-card__edit-button button -icon"><ion-icon name="create-outline"></ion-icon></label>
 			<div class="user-card__delete-button button -danger" onClick="deleteUser(${index})">delete</div>
 		</div>

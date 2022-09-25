@@ -37,7 +37,7 @@ const selects = (selector, scope = document) => {
 };
 
 /**
- * Random Number
+ * Random Number.
  * @param {number} lenght - Number range
  * @return {number} Random number
  */
@@ -47,7 +47,7 @@ const randomNumber = (lenght) => {
 };
 
 /**
- * Inject Html
+ * Inject Html.
  * @param {opbject} parent - Container of added elements
  * @param {string} inner - Injected string
  */
@@ -56,7 +56,7 @@ const injectHtml = (parent, inner) => {
 };
 
 /**
- * Delete spesific user of 'users' list
+ * Delete spesific user of 'users' list.
  * @param {number} index - The index of the user to be deleted
  */
 const deleteUser = (index) => {
@@ -66,7 +66,7 @@ const deleteUser = (index) => {
 };
 
 /**
- * Disable to raffle system
+ * Disable to raffle system.
  */
 const disableRaffler = () => {
   userList.innerHTML = '';
@@ -79,7 +79,7 @@ const disableRaffler = () => {
 };
 
 /**
- * Update spesific user of 'users' list
+ * Update spesific user of 'users' list.
  * @param {number} index - The index of the user to be updated
  * @param {string} value - The value of the user to be updated
  */
@@ -89,7 +89,7 @@ const updateUser = (index, value) => {
 };
 
 /**
- * Print User to screen
+ * Print User to screen.
  */
 const getUsers = () => {
   userList.innerHTML = '';

@@ -158,5 +158,26 @@ userInput.addEventListener('input', (e) => {
     : parentEl.setAttribute('disable', '');
 });
 
+userInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter' || e.keyCode === 13) {
+    let = e = e.target;
+    let parentEl = e.parentElement;
+
+    if (userInput.value.trim() == '') return;
+    if (users.lenght != 0) raffleButton.removeAttribute('disable');
+
+    users.push(userInput.value);
+
+    userInput.parentElement.setAttribute('disable', '');
+    userInput.focus();
+    userInput.value = '';
+
+    getUsers();
+
+    e.checkValidity()
+      ? parentEl.removeAttribute('disable')
+      : parentEl.setAttribute('disable', '');
+  }
+});
 // Init
 getUsers();

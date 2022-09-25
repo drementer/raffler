@@ -48,11 +48,11 @@ const randomNumber = (lenght) => {
 
 /**
  * Inject Html
- * @param {opbject} parrent - Container of added elements
+ * @param {opbject} parent - Container of added elements
  * @param {string} inner - Injected string
  */
-const injectHtml = (parrent, inner) => {
-  parrent.insertAdjacentHTML('beforeend', inner);
+const injectHtml = (parent, inner) => {
+  parent.insertAdjacentHTML('beforeend', inner);
 };
 
 /**

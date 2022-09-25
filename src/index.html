@@ -62,8 +62,8 @@
 	<!-- App -->
 	<main class="app container">
 		<!-- User Input -->
-		<div class="user-input">
-			<input type="text" class="user-input__input" maxlength="18" placeholder="User Name" autofocus user-input>
+		<div class="user-input" disable>
+			<input type="text" class="user-input__input" maxlength="18" placeholder="User Name" required autofocus user-input>
 			<button type="button" class="user-input__button button" add-user-button>add</button>
 		</div><!-- /User Input -->
 
@@ -78,6 +78,12 @@
 
 		<!-- Raffle Button -->
 		<button class="raffle-button button -full-w" raffle-button>Raffle</button>
+
+		<!-- Winner Popup -->
+		<div class="winner-popup popup" hidden winner-popup>
+			<div class="popup__filter"></div>
+			<div class="popup__inner" winner></div>
+		</div><!-- /Winner Popup -->
 	</main><!-- /App -->
 
 	<!-- Scripts -->

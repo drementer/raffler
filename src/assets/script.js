@@ -111,7 +111,8 @@ const getUsers = () => {
  */
 const userInput = select('[user-input]');
 const userList = select('[user-list]');
-const result = select('[result]');
+const winnerPopup = select('[winner-popup]');
+const winner = select('[winner]', winnerPopup);
 const raffleButton = select('[raffle-button]');
 const addUserButton = select('[add-user-button');
 
@@ -120,15 +121,38 @@ let users = ['wall-e', 'drementer'];
 
 addUserButton.addEventListener('click', () => {
   if (userInput.value.trim() == '') return;
+  if (users.lenght != 0) raffleButton.removeAttribute('disable');
 
   users.push(userInput.value);
+  userInput.parentElement.setAttribute('disable', '');
+  userInput.focus();
   userInput.value = '';
   getUsers();
 });
 
+winnerPopup.addEventListener('click', () => {
+  winnerPopup.setAttribute('hidden', '');
+});
+
 raffleButton.addEventListener('click', () => {
+  if (users.length == 0) {
+    winnerPopup.removeAttribute('hidden');
+    winner.innerHTML = `<h1>You cheater!!!</h1>`;
+    return;
+  }
+
   let index = randomNumber(users.length);
-  result.innerHTML = users[index];
+  winnerPopup.removeAttribute('hidden');
+  winner.innerHTML = `<h1>${users[index]}</h1>`;
+});
+
+userInput.addEventListener('input', (e) => {
+  let = e = e.target;
+  let parentEl = e.parentElement;
+
+  e.checkValidity()
+    ? parentEl.removeAttribute('disable')
+    : parentEl.setAttribute('disable', '');
 });
 
 // Init

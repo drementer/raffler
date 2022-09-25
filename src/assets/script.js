@@ -150,7 +150,7 @@ raffleButton.addEventListener('click', () => {
 });
 
 userInput.addEventListener('input', (e) => {
-  let = e = e.target;
+  e = e.target;
   let parentEl = e.parentElement;
 
   e.checkValidity()
@@ -158,5 +158,26 @@ userInput.addEventListener('input', (e) => {
     : parentEl.setAttribute('disable', '');
 });
 
+userInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter' || e.keyCode === 13) {
+    e = e.target;
+    let parentEl = e.parentElement;
+
+    if (userInput.value.trim() == '') return;
+    if (users.lenght != 0) raffleButton.removeAttribute('disable');
+
+    users.push(userInput.value);
+
+    userInput.parentElement.setAttribute('disable', '');
+    userInput.focus();
+    userInput.value = '';
+
+    getUsers();
+
+    e.checkValidity()
+      ? parentEl.removeAttribute('disable')
+      : parentEl.setAttribute('disable', '');
+  }
+});
 // Init
 getUsers();

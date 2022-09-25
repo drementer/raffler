@@ -37,18 +37,6 @@ const selects = (selector, scope = document) => {
 };
 
 /**
- * Variables
- */
-const userInput = select('[user-input]');
-const userList = select('[user-list]');
-const result = select('[result]');
-const raffleButton = select('[raffle-button]');
-const addUserButton = select('[add-user-button');
-
-// Default users
-let users = ['wall-e', 'drementer'];
-
-/**
  * Random Number
  * @param {number} lenght - Number range
  * @return {number} Random number
@@ -92,6 +80,18 @@ const getUsers = () => {
     injectHtml(userList, inner);
   });
 };
+
+/**
+ * Variables
+ */
+const userInput = select('[user-input]');
+const userList = select('[user-list]');
+const result = select('[result]');
+const raffleButton = select('[raffle-button]');
+const addUserButton = select('[add-user-button');
+
+// Default users
+let users = ['wall-e', 'drementer'];
 
 addUserButton.addEventListener('click', () => {
   if (userInput.value.trim() == '') return;

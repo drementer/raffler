@@ -66,6 +66,19 @@ const deleteUser = (index) => {
 };
 
 /**
+ * Disable to raffle system
+ */
+const disableRaffler = () => {
+  userList.innerHTML = '';
+
+  let inner = `
+		<h2 class="user-cards__error">No one can won because there is empty!!!</h2>
+	`;
+  injectHtml(userList, inner);
+  raffleButton.setAttribute('disable', '');
+};
+
+/**
  * Update spesific user of 'users' list
  * @param {number} index - The index of the user to be updated
  * @param {string} value - The value of the user to be updated

@@ -404,20 +404,20 @@ button:-moz-focusring,
 
 html {
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
 }
 @media screen and (max-width: 62em) {
   html {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 @media (max-width: 1200px) {
   h1 {
-    font-size: calc(1.325rem + 0.9vw);
+    font-size: calc(1.275rem + 0.3vw);
   }
 }
 
@@ -447,7 +447,7 @@ label {
   display: inline-flex;
   justify-content: center;
   padding: 0.5rem 1.75rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: hsl(0, 0%, 100%);
   vertical-align: middle;
   user-select: none;
@@ -517,7 +517,7 @@ input::-webkit-input-placeholder {
   flex-direction: row;
   gap: 0.5rem;
   padding: 0.27rem;
-  border: 3px solid hsl(0, 0%, 54%);
+  border: 1px solid hsl(0, 0%, 54%);
   border-radius: 5rem;
 }
 .input__core {
@@ -554,9 +554,7 @@ input::-webkit-input-placeholder {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
 }
 .popup__inner {
   display: flex;

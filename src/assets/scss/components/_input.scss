@@ -1,11 +1,15 @@
 input {
+  z-index: 1;
+
   display: block;
-  width: 100%;
+
   padding: 0;
+  width: 100%;
+
   outline: 0;
   font-size: inherit;
+
   border: none;
-  z-index: 1;
   background-color: transparent;
 
   &:hover,
@@ -14,34 +18,33 @@ input {
   }
 
   &::-webkit-input-placeholder {
-    color: inherit;
     opacity: 0.54;
+    color: inherit;
   }
 }
 
-.user-input {
-  padding: 0.27rem;
-  border: 3px solid $black;
-  border-radius: 5rem;
+.input {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 
-  &[disable] {
-    border: 3px solid $gray-2;
-  }
+  padding: 0.27rem;
 
-  &[disable] &__button {
-		pointer-events: none;
-    background-color: $gray;
-  }
+  border: 1px solid $gray-2;
+  border-radius: 5rem;
 
-  &__input {
+  &__core {
+    flex-grow: 1;
+
     @include padding-left(1.25rem);
 
-    flex-grow: 1;
-    max-width: 100%;
     width: 100%;
+    max-width: 100%;
+
+    &:not(:valid) ~ button {
+      pointer-events: none;
+      background-color: $gray;
+    }
   }
 
   &__button {

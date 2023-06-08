@@ -1,17 +1,25 @@
 .button {
-  @extend %button;
-  @include padding(0.5rem 1.75rem);
-  @include font-size(1.2rem);
+  position: relative;
 
   display: inline-flex;
   justify-content: center;
-  position: relative;
-  vertical-align: middle;
+
+  @include padding(0.5rem 1.75rem);
+  @include font-size(1rem);
+
   color: $white;
+  vertical-align: middle;
+  user-select: none;
+
   border: none;
   border-radius: 5rem;
   background-color: $black;
-  user-select: none;
+
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: capitalize;
+  outline: none;
+  cursor: pointer;
 
   transition: all ease-out 150ms;
 
@@ -21,12 +29,14 @@
   }
 
   &.-icon {
-    @include padding(0.5rem);
-    @include font-size(1.5rem);
-    background-color: transparent;
     width: fit-content;
     height: fit-content;
+
+    @include padding(0.5rem);
+    @include font-size(1.5rem);
+
     color: black;
+    background-color: transparent;
   }
 
   &.-danger {

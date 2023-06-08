@@ -1,28 +1,18 @@
-/// @type string | list
-$root-font-family: 'Poppins', sans-serif !default;
-
-/// @type stirng
-$root-font-size: 18px !default;
-
-/// @type stirng
-/// @alias root-font-size
-$root-font-size--mobile: 14px !default;
-
 /// @type map
 /// @access private
 $font-scales: (
-  'h1': 2,
+  'h1': 1.5,
   'h2': 1.125,
   'p': 1,
   'label': 0.875,
 ) !default;
 
 html {
-  font-family: $root-font-family;
-  font-size: $root-font-size;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
 
   @include mq(lg) {
-    font-size: $root-font-size--mobile;
+    font-size: 12px;
   }
 }
 

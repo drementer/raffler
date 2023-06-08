@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html class="no-js" lang="tr-TR" data-theme="default">
+<html lang="en" data-theme="default">
 <head>
-
-	<!-- Avoiding the FOUC v3.0 -->
-	<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
 
 	<!-- General -->
 	<meta charset="UTF-8">
@@ -14,8 +11,7 @@
 	<meta name="creator" content="drementer, wall-e">
 
 	<!-- Styles -->
-		<!-- Base -->
-		<link rel="stylesheet" href="assets/css/main.min.css?v=0.0.1">
+	<link rel="stylesheet" href="assets/css/main.min.css?v=0.0.1">
 
 	<!-- Page Information -->
 	<title>raffler</title>
@@ -25,15 +21,6 @@
 	<meta name="theme-color" content="#000">
 	<meta name="rating" content="general">
 
-	<!-- Icons -->
-	<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
-	<!-- <link rel="icon" href="favicon.ico" sizes="any"> -->
-	<!-- <link rel="icon" href="icon.svg" type="image/svg+xml"> -->
-	<!-- <link rel="apple-touch-icon" href="icon.png"> -->
-
-	<!-- Manifest -->
-	<!-- <link rel="manifest" href="site.webmanifest"> -->
-
 	<!-- General Open Graph -->
 	<meta property="og:title" content="raffler">
 	<meta property="og:description" content="raffler">
@@ -41,17 +28,13 @@
 	<meta property="og:locale" content="tr_TR">
 	<meta property="og:site_name" content="raffler">
 	<meta property="og:type" content="website">
-	<!-- <meta property="og:image" content=""> -->
 
 	<!-- Twitter Open Graph -->
 	<meta name="twitter:title" content="raffler">
 	<meta name="twitter:description" content="raffler">
 	<meta name="twitter:url" content="raffler">
 	<meta name="twitter:domain" content="dw-raffler.netlify.app/">
-	<!-- <meta name="twitter:creator" content="@"> -->
 	<meta name="twitter:card" content="summary_large_image">
-	<!-- <meta name="twitter:image" content=""> -->
-	<!-- <meta name="twitter:image:alt" content=""> -->
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,32 +42,30 @@
 </head>
 <body>
 
-	<!-- App -->
+	<div class="result-popup popup" hidden result-popup>
+		<div class="popup__filter"></div>
+		<div class="popup__inner" result></div>
+	</div>
+
 	<main class="app container">
-		<!-- User Input -->
-		<div class="user-input" disable>
-			<input type="text" class="user-input__input" maxlength="18" placeholder="User Name" required autofocus user-input>
-			<button type="button" class="user-input__button button" add-user-button>add</button>
-		</div><!-- /User Input -->
 
-		<!-- User Panel -->
-		<div class="user-panel">
-			<div class="user-panel__head">
-				<h1 class="user-panel__heading">Users</h1>
+		<form class="form" form>
+			<div class="input">
+				<input type="text" class="input__core" maxlength="18" placeholder="User Name" required autofocus input>
+				<button type="button" class="input__button button" button>add</button>
 			</div>
-			<div class="user-panel__user-list user-cards" user-list></div>
-		</div>
-		<!-- /User Panel -->
+		</form>
 
-		<!-- Raffle Button -->
+		<section class="item-list">
+			<div class="item-list__head">
+				<h1 class="item-list__heading">Items</h1>
+			</div>
+			<div class="item-list__wrapper" item-list></div>
+		</section>
+
 		<button class="raffle-button button -full-w" raffle-button>Raffle</button>
 
-		<!-- Winner Popup -->
-		<div class="winner-popup popup" hidden winner-popup>
-			<div class="popup__filter"></div>
-			<div class="popup__inner" winner></div>
-		</div><!-- /Winner Popup -->
-	</main><!-- /App -->
+	</main>
 
 	<!-- Scripts -->
 	<script src="assets/script.js"></script>

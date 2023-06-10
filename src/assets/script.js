@@ -39,7 +39,7 @@ const listItems = () => {
 					id="item-${index}"
 					name="item-name"
 					class="list-item__heading"
-					maxlength="18"
+					maxlength="10"
 					value="${user}"
 					oninput="updateItem(${index}, this.value)"
 				/>

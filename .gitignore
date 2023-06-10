@@ -6,8 +6,6 @@
 
 # MacOS general
 .DS_Store
-.AppleDouble
-.LSOverride
 
 # Sass
 .sass-cache/
@@ -15,15 +13,6 @@
 *.sass.map
 *.scss.map
 
-# Parcel Bundler
-.parcel-cache
-
 # Npm packages
 /node_modules/*
 package-lock.json
-
-# Project
-dist
-/build/
-/tmp/
-.cache

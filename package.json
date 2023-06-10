@@ -1,15 +1,10 @@
 {
   "name": "raffler",
-  "version": "0.0.1",
+  "version": "1",
   "description": "Raffle app",
   "scripts": {
-    "parcel-watch": "parcel watch src/*.html --public-url ./ --no-source-maps",
-    "parcel-dev": "parcel src/*.html --open --no-cache --no-source-maps",
-    "parcel-build": "parcel build src/*.html --public-url ./ --no-source-maps",
     "sass-build": "sass src/assets/scss/main.scss src/assets/css/main.min.css --style compressed --no-error-css",
-    "sass-watch": "sass --watch src/assets/scss/main.scss src/assets/css/main.min.css --style expanded --error-css",
-    "dev": "sass --watch src/assets/scss/main.scss src/assets/css/main.min.css --style expanded --error-css && parcel src/*.html --open --no-cache --no-source-maps",
-    "build": "sass src/assets/scss/main.scss src/assets/css/main.min.css --style expanded --no-error-css && parcel build src/*.html --public-url ./ --no-source-maps"
+    "sass-watch": "sass --watch src/assets/scss/main.scss src/assets/css/main.min.css --style expanded --error-css"
   },
   "author": "drementer, wall-e",
   "license": "MIT",
@@ -22,7 +17,6 @@
   },
   "homepage": "https://github.com/drementer/raffler#readme",
   "devDependencies": {
-    "sass": "^1.54.9",
-    "parcel": "^2.7.0"
+    "sass": "^1.54.9"
   }
 }

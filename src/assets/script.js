@@ -22,7 +22,7 @@ const updateItem = (index, value) => {
 
 const deleteItem = (index) => {
   items.splice(index, 1);
-  raffleButton.toggleAttribute('disable', !items.length);
+  checkButton();
   listItems();
 };
 
@@ -58,6 +58,10 @@ const listItems = () => {
   });
 };
 
+const checkButton = () => {
+  raffleButton.toggleAttribute('disable', items.length < 2);
+};
+
 const addItem = () => {
   const value = input.value.trim();
   if (value === '') return;
@@ -67,6 +71,7 @@ const addItem = () => {
   form.reset();
   input.focus();
 
+  checkButton();
   listItems();
 };
 

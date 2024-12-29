@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bubble {
+  position: absolute;
+  border-radius: 0.5rem;
+  pointer-events: none;
+  transition: all 150ms ease;
+  background-color: white;
+  transform-origin: center;
+}

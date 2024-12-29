@@ -1,75 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="default">
-<head>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
 
-	<!-- General -->
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
-	<meta name="robots" content="index, follow">
-	<meta name="author" content="drementer, wall-e">
-	<meta name="creator" content="drementer, wall-e">
+    <link href="./style.css" rel="stylesheet" />
+    <script defer type="module" src="./app.js"></script>
 
-	<!-- Styles -->
-	<link rel="stylesheet" href="assets/css/main.min.css?v=0.0.1">
+    <title>raffler</title>
+  </head>
+  <body class="bg-gray-50">
 
-	<!-- Page Information -->
-	<title>raffler</title>
-	<meta name="title" content="raffler">
-	<meta name="description" content="raffler">
-	<meta name="keywords" content="raffler">
-	<meta name="theme-color" content="#000">
-	<meta name="rating" content="general">
+    <main class="relative container mx-auto max-w-[40rem] px-4 sm:px-6 lg:px-8 my-10 sm:my-24 text-center">
+      <form class="mt-7 sm:mt-12 mx-auto relative" form autocomplete="off">
+        <div class="z-10 relative flex items-center gap-x-3 p-3 bg-white/30 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg shadow-gray-900/5">
+          <input required autofocus autocomplete="off" type="text" name="name" minlength="2" class="py-2.5 px-4 block w-full border-transparent outline-none rounded-lg bg-transparent focus:ring-transparent focus:border-transparent text-gray-900 placeholder-gray-500" placeholder="Name" input>
 
-	<!-- General Open Graph -->
-	<meta property="og:title" content="raffler">
-	<meta property="og:description" content="raffler">
-	<meta property="og:url" content="dw-raffler.netlify.app/">
-	<meta property="og:locale" content="tr_TR">
-	<meta property="og:site_name" content="raffler">
-	<meta property="og:type" content="website">
+          <div class="relative p-0.5 flex bg-gray-100 rounded-lg" bubble-container>
+            <label class="relative block py-2 px-4 rounded-lg" bubble-anchor default-bubble-anchor>
+              <span class="inline-block relative z-10 text-sm font-medium text-gray-800 cursor-pointer">
+                1x
+              </span>
+              <input checked value="1" name="multiplier" type="radio" class="absolute top-0 end-0 size-full border-transparent bg-transparent bg-none text-transparent rounded-lg cursor-pointer focus:ring-offset-0 checked:bg-none focus:ring-transparent">
+            </label>
+            <label class="relative block py-2 px-4 rounded-lg" bubble-anchor>
+              <span class="inline-block relative z-10 text-sm font-medium text-gray-800 cursor-pointer">
+                2x
+              </span>
+              <input value="2" name="multiplier" type="radio" class="absolute top-0 end-0 size-full border-transparent bg-transparent bg-none text-transparent rounded-lg cursor-pointer focus:ring-offset-0 checked:bg-none focus:ring-transparent">
+            </label>
+            <label class="relative block py-2 px-4 rounded-lg" bubble-anchor>
+              <span class="inline-block relative z-10 text-sm font-medium text-gray-800 cursor-pointer">
+                3x
+              </span>
+              <input value="3" name="multiplier" type="radio" class="absolute top-0 end-0 size-full border-transparent bg-transparent bg-none text-transparent rounded-lg cursor-pointer focus:ring-offset-0 checked:bg-none focus:ring-transparent">
+            </label>
+          </div>
+        </div>
 
-	<!-- Twitter Open Graph -->
-	<meta name="twitter:title" content="raffler">
-	<meta name="twitter:description" content="raffler">
-	<meta name="twitter:url" content="raffler">
-	<meta name="twitter:domain" content="dw-raffler.netlify.app/">
-	<meta name="twitter:card" content="summary_large_image">
+        <div class="hidden md:block absolute top-0 right-0 -translate-y-[4rem] translate-x-[3.5rem]">
+          <svg class="w-16 h-auto text-red-300" width="121" height="135" viewBox="0 0 121 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+            <path d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+            <path d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </form>
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
+      <div class="relative">
+        <div class="space-y-4 my-4 max-h-[600px] overflow-y-auto" card-deck>
+          <template card-template>
+            <div class="flex items-center gap-x-3 p-3 bg-white/30 backdrop-blur-sm border border-gray-200 rounded-lg shadow-sm" card>
+              <div class="flex-grow">
+                <input type="text" title="Name" placeholder="Name" class="w-full py-2 px-3 border-transparent bg-transparent focus:ring-transparent focus:border-transparent text-gray-900 placeholder-gray-500" card-name />
+              </div>
 
-	<div class="result-popup popup" hidden result-popup>
-		<div class="popup__filter"></div>
-		<div class="popup__inner" result></div>
-	</div>
+              <select card-multiplier title="Multiplier" class="py-2 px-4 pe-9 block bg-gray-100 hover:bg-gray-200/75 transition-colors cursor-pointer text-sm border-transparent focus:ring-transparent focus:border-transparent rounded-lg">
+                <option value="1">1x</option>
+                <option value="2">2x</option>
+                <option value="3">3x</option>
+              </select>
 
-	<main class="app container">
+              <button title="Delete" class="p-2 text-red-600 rounded-lg bg-red-50 hover:bg-red-100 transition-colors" delete-button>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </template>
+        </div>
+      </div>
 
-		<form class="form" form>
-			<div class="input">
-				<input type="text" class="input__core" maxlength="10" placeholder="User Name" required autofocus input>
-				<button type="button" class="input__button button" button>add</button>
-			</div>
-		</form>
-
-		<section class="item-list">
-			<div class="item-list__head">
-				<h1 class="item-list__heading">Items</h1>
-			</div>
-			<div class="item-list__wrapper" item-list></div>
-		</section>
-
-		<button class="raffle-button button -full-w" raffle-button>Raffle</button>
-
-	</main>
-
-	<!-- Scripts -->
-	<script src="assets/script.js"></script>
-		<!-- Ion Icons -->
-		<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+      <button raffle-button disabled title="Raffle" type="button" class="w-full py-3 px-4 my-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed disabled:pointer-events-none transition-colors">
+        Raffle
+        <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </button>
+    </main>
+  </body>
 </html>

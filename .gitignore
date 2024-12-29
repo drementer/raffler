@@ -7,12 +7,12 @@
 # MacOS general
 .DS_Store
 
-# Sass
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
-
 # Npm packages
-/node_modules/*
+/node_modules
 package-lock.json
+
+# Parcel cache
+.parcel-cache/
+
+# Parcel build
+dist/

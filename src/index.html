@@ -9,42 +9,128 @@
     <link href="./style.css" rel="stylesheet" />
     <script defer type="module" src="./app.js"></script>
 
-    <title>raffler</title>
+    <title>DW Raffler | Raffle whatever you want!</title>
   </head>
   <body class="bg-gray-50">
+    <div
+      class="fixed inset-0 z-50 flex items-center justify-center w-screen h-screen bg-gray-600/20 backdrop-blur-sm"
+      result-popup
+      hidden
+    >
+      <div
+        class="relative z-10 p-4 flex border-gray-200 rounded-lg shadow-sm items-center justify-center w-full max-w-[35.5rem] min-h-40 bg-white mx-4"
+      >
+        <img
+          src="./winner.svg"
+          alt="winner"
+          class="absolute inset-0 w-full h-full object-contain p-8"
+        />
+        <h1 class="text-5xl text-center font-semibold select-none" result>
+          Silvester
+        </h1>
+      </div>
+    </div>
 
-    <main class="relative container mx-auto max-w-[40rem] px-4 sm:px-6 lg:px-8 my-10 sm:my-24 text-center">
+    <main
+      class="relative container mx-auto max-w-[40rem] z-10 px-4 sm:px-6 lg:px-8 my-10 sm:my-24 text-center"
+    >
       <form class="mt-7 sm:mt-12 mx-auto relative" form autocomplete="off">
-        <div class="z-10 relative flex items-center gap-x-3 p-3 bg-white/30 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg shadow-gray-900/5">
-          <input required autofocus autocomplete="off" type="text" name="name" minlength="2" class="py-2.5 px-4 block w-full border-transparent outline-none rounded-lg bg-transparent focus:ring-transparent focus:border-transparent text-gray-900 placeholder-gray-500" placeholder="Name" input>
+        <div
+          class="z-10 relative flex items-center gap-x-3 p-3 bg-white/30 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg shadow-gray-900/5"
+        >
+          <input
+            required
+            input
+            autofocus
+            placeholder="Silverter"
+            autocomplete="off"
+            type="text"
+            name="name"
+            minlength="2"
+            maxlength="25"
+            class="py-2.5 px-4 block w-full border-transparent outline-none rounded-lg bg-transparent focus:ring-transparent focus:border-transparent text-gray-900 placeholder-gray-500"
+          />
 
-          <div class="relative p-0.5 flex bg-gray-100 rounded-lg" bubble-container>
-            <label class="relative block py-2 px-4 rounded-lg" bubble-anchor default-bubble-anchor>
-              <span class="inline-block relative z-10 text-sm font-medium text-gray-800 cursor-pointer">
+          <div
+            class="relative p-0.5 flex bg-gray-100 rounded-lg"
+            bubble-container
+          >
+            <label
+              class="relative block py-2 px-4 rounded-lg"
+              bubble-anchor
+              default-bubble-anchor
+            >
+              <span
+                class="inline-block relative z-10 text-sm font-medium text-gray-800 cursor-pointer"
+              >
                 1x
               </span>
-              <input checked value="1" name="multiplier" type="radio" class="absolute top-0 end-0 size-full border-transparent bg-transparent bg-none text-transparent rounded-lg cursor-pointer focus:ring-offset-0 checked:bg-none focus:ring-transparent">
+              <input
+                checked
+                value="1"
+                name="multiplier"
+                type="radio"
+                class="absolute top-0 end-0 size-full border-transparent bg-transparent bg-none text-transparent rounded-lg cursor-pointer focus:ring-offset-0 checked:bg-none focus:ring-transparent"
+              />
             </label>
             <label class="relative block py-2 px-4 rounded-lg" bubble-anchor>
-              <span class="inline-block relative z-10 text-sm font-medium text-gray-800 cursor-pointer">
+              <span
+                class="inline-block relative z-10 text-sm font-medium text-gray-800 cursor-pointer"
+              >
                 2x
               </span>
-              <input value="2" name="multiplier" type="radio" class="absolute top-0 end-0 size-full border-transparent bg-transparent bg-none text-transparent rounded-lg cursor-pointer focus:ring-offset-0 checked:bg-none focus:ring-transparent">
+              <input
+                value="2"
+                name="multiplier"
+                type="radio"
+                class="absolute top-0 end-0 size-full border-transparent bg-transparent bg-none text-transparent rounded-lg cursor-pointer focus:ring-offset-0 checked:bg-none focus:ring-transparent"
+              />
             </label>
             <label class="relative block py-2 px-4 rounded-lg" bubble-anchor>
-              <span class="inline-block relative z-10 text-sm font-medium text-gray-800 cursor-pointer">
+              <span
+                class="inline-block relative z-10 text-sm font-medium text-gray-800 cursor-pointer"
+              >
                 3x
               </span>
-              <input value="3" name="multiplier" type="radio" class="absolute top-0 end-0 size-full border-transparent bg-transparent bg-none text-transparent rounded-lg cursor-pointer focus:ring-offset-0 checked:bg-none focus:ring-transparent">
+              <input
+                value="3"
+                name="multiplier"
+                type="radio"
+                class="absolute top-0 end-0 size-full border-transparent bg-transparent bg-none text-transparent rounded-lg cursor-pointer focus:ring-offset-0 checked:bg-none focus:ring-transparent"
+              />
             </label>
           </div>
         </div>
 
-        <div class="hidden md:block absolute top-0 right-0 -translate-y-[4rem] translate-x-[3.5rem]">
-          <svg class="w-16 h-auto text-red-300" width="121" height="135" viewBox="0 0 121 135" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
-            <path d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
-            <path d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+        <div
+          class="hidden md:block absolute top-0 right-0 -translate-y-[4rem] translate-x-[3.5rem]"
+        >
+          <svg
+            class="w-16 h-auto text-red-300"
+            width="121"
+            height="135"
+            viewBox="0 0 121 135"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164"
+              stroke="currentColor"
+              stroke-width="10"
+              stroke-linecap="round"
+            />
+            <path
+              d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5"
+              stroke="currentColor"
+              stroke-width="10"
+              stroke-linecap="round"
+            />
+            <path
+              d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874"
+              stroke="currentColor"
+              stroke-width="10"
+              stroke-linecap="round"
+            />
           </svg>
         </div>
       </form>
@@ -52,20 +138,46 @@
       <div class="relative">
         <div class="space-y-4 my-4 max-h-[600px] overflow-y-auto" card-deck>
           <template card-template>
-            <div class="flex items-center gap-x-3 p-3 bg-white/30 backdrop-blur-sm border border-gray-200 rounded-lg shadow-sm" card>
+            <div
+              class="flex items-center gap-x-3 p-3 bg-white/30 backdrop-blur-sm border border-gray-200 rounded-lg shadow-sm"
+              card
+            >
               <div class="flex-grow">
-                <input type="text" title="Name" placeholder="Name" class="w-full py-2 px-3 border-transparent bg-transparent focus:ring-transparent focus:border-transparent text-gray-900 placeholder-gray-500" card-name />
+                <input
+                  type="text"
+                  title="Name"
+                  placeholder="Name"
+                  class="w-full py-2 px-3 border-transparent bg-transparent focus:ring-transparent focus:border-transparent text-gray-900 placeholder-gray-500"
+                  card-name
+                />
               </div>
 
-              <select card-multiplier title="Multiplier" class="py-2 px-4 pe-9 block bg-gray-100 hover:bg-gray-200/75 transition-colors cursor-pointer text-sm border-transparent focus:ring-transparent focus:border-transparent rounded-lg">
+              <select
+                card-multiplier
+                title="Multiplier"
+                class="py-2 px-4 pe-9 block bg-gray-100 hover:bg-gray-200/75 transition-colors cursor-pointer text-sm border-transparent focus:ring-transparent focus:border-transparent rounded-lg"
+              >
                 <option value="1">1x</option>
                 <option value="2">2x</option>
                 <option value="3">3x</option>
               </select>
 
-              <button title="Delete" class="p-2 text-red-600 rounded-lg bg-red-50 hover:bg-red-100 transition-colors" delete-button>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+              <button
+                title="Delete"
+                class="p-2 text-red-600 rounded-lg bg-red-50 hover:bg-red-100 transition-colors"
+                delete-button
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                    clip-rule="evenodd"
+                  />
                 </svg>
               </button>
             </div>
@@ -73,12 +185,14 @@
         </div>
       </div>
 
-      <button raffle-button disabled title="Raffle" type="button" class="w-full py-3 px-4 my-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed disabled:pointer-events-none transition-colors">
-        Raffle
-        <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14"></path>
-          <path d="m12 5 7 7-7 7"></path>
-        </svg>
+      <button
+        raffle-button
+        disabled
+        title="Raffle"
+        type="button"
+        class="w-full py-3 px-4 my-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed disabled:pointer-events-none transition-colors"
+      >
+        Raffle 🎉
       </button>
     </main>
   </body>

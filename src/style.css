@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+[hidden] {
+  display: none !important;
+}
+
 .bubble {
   position: absolute;
   border-radius: 0.5rem;

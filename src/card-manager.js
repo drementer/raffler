@@ -88,7 +88,7 @@ export default class CardManager {
 
   loadDefaultCards() {
     const savedCards = localStorage.getItem('raffle-cards');
-    const cards = savedCards ? JSON.parse(savedCards) : this.placeholderCards;
+    const cards = savedCards ? JSON.parse(savedCards) : CardManager.placeholderCards;
 
     cards.forEach((card) => {
       this.addCard(card.name, card.multiplier);

@@ -13,6 +13,3 @@ package-lock.json
 
 # Parcel cache
 .parcel-cache/
-
-# Parcel build
-dist/
